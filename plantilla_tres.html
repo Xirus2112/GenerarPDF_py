@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informe Médico</title>
+    <style>
+        .container{
+            text-align: center;
+        }
+        .image{
+            float: left;
+            margin-right: 20px;
+            width: 100px;
+        }
+        .text-container {
+            display: inline-block;
+            vertical-align: middle;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+
+        /*h1 {
+            color: black;
+            font-size: 16px;
+            text-align: center;
+            /*text-decoration: underline;
+        }*/
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        table, th, td {
+            border: 1px solid #030303;
+        }
+
+        th, td {
+            padding: 2px;
+            text-align: left;
+        }
+        .centrar-contenido{
+            text-align: center;
+            margin-top: 150px;
+        }
+        .centrar-contenido img{
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <table style="width: 100%; border: 0px solid #000000 !important; ">
+        <tbody>
+            <tr>
+                <td style="width: 30%; border: 0px solid #000000 !important;"><img src="img/Logo.jpeg" alt="Imgen Logo"></td>
+                <td style="width: 70%; text-align: left; border: 0px solid #000000 !important;"><h1>HISTORIA CLINICA</h1><p>NIT: 901544908-5</p></td>
+            </tr>
+        </tbody>
+    </table>
+    <table>
+        <tr>
+            <th>No. de Historia:</th>
+            <td>{{NoHistoria}}</td>
+        </tr>
+        <tr>
+            <th>Fecha de Atención:</th>
+            <td>{{fecAtencion}}</td>
+        </tr>
+        <tr>
+            <th>No. de Admisión:</th>
+            <td>{{No_Admision}}</td>
+        </tr>
+        <tr>
+            <th>Fecha de Ingreso:</th>
+            <td>{{fIngreso}}</td>
+        </tr>
+        <tr>
+            <th>Fecha de Salida:</th>
+            <td>{{fSalida}}</td>
+        </tr>
+        <tr>
+            <th>Nombres del Paciente:</th>
+            <td>{{NombresPaciente}}</td>
+        </tr>
+        <tr>
+            <th>Documento de Identidad:</th>
+            <td>{{documento}}</td>
+        </tr>
+        <tr>
+            <th>Lugar de Nacimiento:</th>
+            <td>{{LugarNacimiento}}</td>
+        </tr>
+        <tr>
+            <th>Fecha de Nacimiento:</th>
+            <td>{{Fnacimiento}}</td>
+        </tr>
+        <tr>
+            <th>Edad:</th>
+            <td>{{edad}}</td>
+        </tr>
+        <tr>
+            <th>Estado Civil:</th>
+            <td>{{EstadoCivil}}</td>
+        </tr>
+        <tr>
+            <th>Sexo:</th>
+            <td>{{Sexo}}</td>
+        </tr>
+        <tr>
+            <th>Ciudad:</th>
+            <td>{{Ciudad}}</td>
+        </tr>
+        <tr>
+            <th>Motivo de Consulta:</th>
+            <td>{{motivoConsulta}}</td>
+        </tr>
+        <tr>
+            <th>Antecedentes:</th>
+            <td>{{antecedentes}}</td>
+        </tr>
+        <tr>
+            <th>Tensión Arterial (TA):</th>
+            <td>{{TA}}</td>
+        </tr>
+        <tr>
+            <th>Pulso:</th>
+            <td>{{pulso}}</td>
+        </tr>
+        <tr>
+            <th>Frecuencia Respiratoria (FR):</th>
+            <td>{{FR}}</td>
+        </tr>
+        <tr>
+            <th>Temperatura:</th>
+            <td>{{temperatura}}</td>
+        </tr>
+        <tr>
+            <th>Peso:</th>
+            <td>{{peso}}</td>
+        </tr>
+        <tr>
+            <th>Talla:</th>
+            <td>{{talla}}</td>
+        </tr>
+        <tr>
+            <th>Índice de Masa Corporal (IMC):</th>
+            <td>{{imc}}</td>
+        </tr>
+        <tr>
+            <th>Perímetro Cefálico (PC):</th>
+            <td>{{pc}}</td>
+        </tr>
+        <tr>
+            <th>Saturación de Oxígeno (SpO2):</th>
+            <td>{{spo2}}</td>
+        </tr>
+        <tr>
+            <th>Puntuación SCOR:</th>
+            <td>{{scor}}</td>
+        </tr>
+        <tr>
+            <th>Perímetro Braquial:</th>
+            <td>{{PerimetroBraquial}}</td>
+        </tr>
+        <tr>
+            <th>FRAX:</th>
+            <td>{{frax}}</td>
+        </tr>
+        <tr>
+            <th>Riesgo Cardiovascular (RCV):</th>
+            <td>{{rcv}}</td>
+        </tr>
+        <tr>
+            <th>Edad Ósea (Edol):</th>
+            <td>{{edol}}</td>
+        </tr>
+        <tr>
+            <th>Glasgow Coma Scale (GCS):</th>
+            <td>{{gw}}</td>
+        </tr>
+        <tr>
+            <th>Presión Arterial Diastólica (PABD1):</th>
+            <td>{{pabd1}}</td>
+        </tr>
+        <tr>
+            <th>Diagnóstico 1:</th>
+            <td>{{dx1}}</td>
+        </tr>
+        <tr>
+            <th>Diagnóstico 2:</th>
+            <td>{{dx2}}</td>
+        </tr>
+        <tr>
+            <th>Comentario Diagnóstico:</th>
+            <td>{{ComentarioDx}}</td>
+        </tr>
+        <tr>
+            <th>Examen Físico:</th>
+            <td>{{ExamenFisico}}</td>
+        </tr>
+        <tr>
+            <th>Evaluación:</th>
+            <td>{{Evaluacion}}</td>
+        </tr>
+        <tr>
+            <th>Evolución:</th>
+            <td>{{Evolucion}}</td>
+        </tr>
+        <tr>
+            <th>ID del Médico:</th>
+            <td>{{IdMedico}}</td>
+        </tr>
+        <tr>
+            <th>Código de Especialidad:</th>
+            <td>{{CodEspecialidad}}</td>
+        </tr>
+        <tr>
+            <th>Nombre del Médico:</th>
+            <td>{{NombreMedico}}</td>
+        </tr>
+        <tr>
+            <th>Especialidad:</th>
+            <td>{{Especialidad}}</td>
+        </tr>
+        <tr>
+            <th colspan="2">Enfermedad Actual:</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{EnfermedadActual}}</td>
+        </tr>
+        <tr>
+            <th colspan="2">Revisión del Sistema:</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{Revision_Sistema}}</td>
+        </tr>
+        <tr>
+            <th colspan="2">Examen Físico:</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{examen_fisico}}</td>
+        </tr>
+        <tr>
+            <th colspan="2">Plan de Diagnóstico:</th>
+        </tr>
+        <tr>
+            <td colspan="2">{{PlanDx}}</td>
+        </tr>
+        <!--tr>
+            <th>Imagem:</th>
+            <th><img src="{{ imagen }}" alt="Imagen" width="100" height="100"></th>
+        </tr-->
+    </table>
+    <div class="centrar-contenido">
+        <img src="{{ imagen }}" alt="Imagen" width="100" height="100">
+
+        __________________________________
+        <p>Firma</p>
+    </div>
+</body>
+</html>

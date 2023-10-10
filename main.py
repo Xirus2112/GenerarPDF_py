@@ -16,7 +16,7 @@ tabla = "hhistorias"
 
 engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
 
-consulta_sql = f'SELECT * FROM {tabla} LIMIT 10'
+consulta_sql = f'SELECT * FROM {tabla} WHERE id = 24'
 
 df = pd.read_sql_query(consulta_sql, engine)
 
@@ -37,6 +37,7 @@ for i, row in df.iterrows():
     num_dcto = documento=row['documento']
     num_historia = NoHistoria=row['NoHistoria']
     imagen = firma=row['firma']
+    id = row['id']
     # Renderizar la plantilla con los datos de la fila actual
     html_content = template.render(
         NoHistoria=row['NoHistoria'],
@@ -88,7 +89,8 @@ for i, row in df.iterrows():
     )
 
     # Crear un archivo PDF individual
-    nombre_archivo_pdf = f'{carpeta_salida}{num_dcto}_{num_historia}_{i + 1}.pdf'
+    #nombre_archivo_pdf = f'{carpeta_salida}{num_dcto}_{num_historia}_{i + 1}.pdf'
+    nombre_archivo_pdf = f'{carpeta_salida}{num_dcto}_{id}_{i + 1}.pdf'
     with open(nombre_archivo_pdf, "wb") as f:
         pisa.CreatePDF(html_content, dest=f)
 

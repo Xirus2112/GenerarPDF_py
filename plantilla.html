@@ -1,10 +1,522 @@
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:right;line-height:normal;'><strong><span style="font-size:16px;color:black;">Invoice ID:&nbsp;</span></strong><span style="font-size:16px;color:black;">{{ invoice_id }}</span></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:right;line-height:normal;'><strong><span style="font-size:16px;color:black;">&nbsp;</span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:right;line-height:normal;'><strong><span style="font-size:16px;color:black;">&nbsp;</span></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:center;line-height:normal;'><strong><u><span style='font-size:21px;font-family:"Times New Roman",serif;color:black;'>A QUIEN INTERESE</span></u></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;text-align:center;line-height:normal;'><strong><u><span style="font-size:16px;color:black;"><span style="text-decoration:none;">&nbsp;</span></span></u></strong></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:0cm;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;line-height:normal;'><span style="font-size:16px;color:black;">Branch: {{ branch }}</span></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><span style="font-size:16px;color:black;">Eseto en la ciudad de <strong>City:</strong> {{ city }}</span></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><span style="font-size:16px;color:black;">Customer type: {{ customer_type }}</span></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><span style="font-size:16px;color:black;">Gender: {{ gender }}</span></p>
-<p style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;margin-left:0cm;font-size:11.0pt;font-family:"Calibri",sans-serif;'><span style="font-size:16px;color:black;">Product line: {{ product_line }}</span></p>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Requerido</title>
+  <!--link rel="stylesheet" href="estilos.css"-->
+  <style>
+    header {
+    margin-top: 20px;
+    margin-left: 18px;
+    margin-right: 25px;
+    padding: 35px;
+    background-color: #ffffff;
+    height: 100%;
+    padding-right: 10px;
+
+}
+
+img {
+    float: left;
+    height: 80px;
+    width: auto;
+}
+
+.separador {
+    margin-top: 7px;
+    background-color: 	#E0E0E0;
+    margin-left: 25px;
+    margin-right: 35px;
+    padding: 3.5px;
+    font-size: 14px;
+
+}
+.separador1{
+    margin-top: 7px;
+    background-color: 	#E0E0E0;
+    display: flex;
+    margin-left: 25px;
+    margin-right: 35px;
+    padding: 3.5px;
+    font-size: 14px;
+
+}
+
+body {
+    margin-left: 20%;
+    margin-right: 20%;
+    border: rgb(255, 255, 255) 2px solid;
+    padding-left: 10px;
+    box-shadow: 0 0 15px #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+.tabla1 {
+    width: 108%;
+    height: 80px;
+    margin-top: -4%;
+    margin-left: -4%;
+    margin-right: -4%;
+    border: #c4c4c4 solid 2px;
+    border-collapse: collapse;
+    padding-right: 12px;
+
+}
+
+.tablaRS {
+    width: 92.3%;
+    height: auto;
+    border-collapse: collapse;
+    margin-left: 25px;
+    margin-right: 25px;
+    border: #c4c4c4 solid 2px;
+
+
+
+}
+
+.tablaSV {
+    width: 92.3%;
+    height: auto ;
+    margin-left: 25px;
+    margin-right: 25px;
+
+
+
+}
+.tablaEF{
+    width: 92.3%;
+    margin-left: 25px;
+    margin-right: 25px;
+    border-collapse: collapse;
+    border: #c4c4c4 solid 2px;
+
+
+
+}
+
+
+.datos {
+    margin-top: -10px;
+    margin-left: 25px;
+    margin-right: -1px;
+    font-size: 15px;
+}
+.datos2 {
+    margin-top: -10px;
+    margin-left: 25px;
+    margin-right: -1px;
+    font-size: 15px;
+}
+.tablaDia{
+    width: 92.3%;
+    border-collapse: collapse;
+    border: #c4c4c4 solid 2px;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+.tablaAN{
+    width: 92.3%;
+    border-collapse: collapse;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+.tablita1{
+    width: 32%;
+    font-size: 14px;
+
+}
+.tablaAN1{
+    width: 92.3%;
+    font-size: 14px;
+    border-collapse: collapse;
+    margin-left: 25px;
+    margin-right: 25px;
+    height: auto;
+}
+.borde{
+    border: #c4c4c4 solid 2px;
+}
+.borde1{
+    border: #c4c4c4 solid 2px;
+    padding: 2px;
+    text-align: center;
+    font-size: 12px;
+}
+.solicitudes_tab{
+    width: 92.3%;
+    border-collapse: collapse;
+    margin-left: 25px;
+    margin-right: 25px;
+   border: #c4c4c4 solid 2px;
+   height: auto;
+}
+.tabla1,.tablaAN,.tablaAN1,.tablaDia,.tablaEF,.tablaEF,.tablaRS,.tablaSV{
+    font-size: 14px;
+}
+.pagina{
+    margin-top: 7px;
+    background-color: 	#e7e7e7;
+    margin-left: -14px;
+    margin-right: -4px;
+    padding: 9px;
+    font-size: 14px;
+    box-shadow: 0 0 15px #ddd;
+}
+.firma{
+    margin-top: 100PX;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 20%;
+    margin-top: 50%;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <header style="display: flex 15px">
+    <table class="tabla1">
+      <tr>
+        <td ROWSPAN=2><img src="imagenes/logo_enron.png" alt=""></td>
+        <td ROWSPAN=2><b>HISTORIA CLINICA MEDICIA GENERAL</b>
+          <br> U.T. ERON SALUD NIT: 901544908-5
+        </td>
+        <td class="borde1">Version
+          <br>1
+        </td>
+        <td class="borde1">Edicción <br> 2023</td>
+      </tr>
+      <tr>
+        <td class="borde1">Código <br> 0.0</td>
+        <td class="borde1"><b>Hoja 1/2</b></td>
+      </tr>
+    </table>
+
+
+  </header>
+  <div class="datos" style="display: flex; font-size: 14px;">
+    <div class=""><b>
+        <label>No. Historia</label><br>
+        <label>F. Ingreso</label><br>
+        <label>Paciente</label><br>
+        <label>Lugar Nac.</label><br>
+        <label>Estado Civil</label><br>
+        <label>Ocupación</label><br>
+        <label>Escolaridad</label><br>
+        <label>O. Sexual </label><br>
+        <label>Acudiente</label><br><br>
+        <label>Motivo Consulta </label><br>
+        <label>Enfermedad Actual</label><br>
+      </b>
+    </div>
+    <div>
+      <label>{{NoHistoria}}</label><br>
+      <label> {{fIngreso}}</label><br>
+      <label>{{Paciente}}</label><br>
+      <label>{{L_nacimiento}}</label><br>
+      <label>{{E_civil}}</label><br>
+      <label>{{Ocupacion}}</label><br>
+      <label>{{Escolaridad}}</label><br>
+      <label>{{O_sexual}}</label><br>
+      <label>{{Acudiente}}</label><br><br>
+      <label>{{Moti_consulta}}</label><br>
+      <label>{{Enf_act}}</label><br>
+    </div>
+    <div class=""><b>
+        <label>F.Impresion</label><br>
+        <label>F. Salida</label><br><br>
+        <label>Fecha Nac.</label><br>
+        <label>Sexo.</label><br>
+        <label>Ciudad</label><br>
+        <label>Patio/bloque</label><br>
+        <label>O. Sexual </label><br>
+        <label>Teléfono Acu. </label><br>
+
+      </b>
+    </div>
+    <div>
+      <label>{{fimpresion}}</label><br><br>
+
+      <label><b> Documento</b></label><br>
+      <label>{{Fnacimiento}}</label><br>
+      <label>{{Sexol}}</label><br>
+      <label>{{Ciudad}}</label><br>
+      <label>{{PB}}</label><br><br>
+
+      <label>{{Tel}}</label><br><br>
+    </div>
+    <div class="">
+      <label><b>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Admisión</b></label><br><br>
+
+      <label>{{Documento}}</label><br>
+      <label><b>Edad</b></label><br>
+      <label><b>Estrato</b></label><br><br>
+      <label><b>Regimen</b></label><br>
+      <label><b>Disca</b></label><br>
+      <label><b>Parentesco</b></label><br>
+
+    </div>
+    <div>
+      <label>&nbsp &nbsp &nbsp &nbsp &nbsp{{Admision}}</label><br><br><br>
+
+      <label>{{Edad}}</label><br>
+      <label>{{Estrato}}</label><br><br>
+
+      <label>{{Regimen}}</label><br>
+      <label>{{Discapacidad}}</label><br>
+      <label>{{Parentesco}}</label><br><br>
+    </div>
+  </div>
+  <br>
+  <div class="separador"><b>Revisión por Sistemas</b> <br></div>
+  <br>
+  <table border="1" class="tablaRS">
+    <tr>
+      <td>1</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>12</td>
+    </tr>
+  </table>
+
+  <div style="display: flex;" class="separador"><b>Signos Vitales</b></div><br>
+  <div>
+  <table style="font-size: 11px;" class="tablaSV">
+    <tr>
+      <td><b>T.A</b></td> <td>{{TA}}</td>
+      <td><b>Pulso</b></td><td>{{Pulso}}</td>
+      <td><b>F.R</b></td><td>{{FR}}</td>
+      <td><b>T°</b></td><td>{{Temp}}</td>
+      <td><b>Peso</b></td><td>{{Peso}}</td>
+      <td><b>Talla</b></td><td>{{Talla}}</td>
+      <td><b>IMC</b></td><td>{{IMC}}</td>
+      <td><b>P.C</b></td><td>{{PC}}</td>
+      <td><b>SP02.</b></td><td>{{SP02}}</td>
+    </tr>
+  </table>
+</div>
+  <div>
+  <table style="font-size: 11px;" class="tablaSV">
+    <tr>
+      <td><b>S.Cor</b></td><td>{{SCor}}</td>
+      <td><b>P.Cap</b></td><td>{{P_cap}}</td>
+      <td><b>P.Bra</b></td><td>{{P_bra}}</td>
+      <td><b>FRAX%</b></td><td>{{Frax}}</td>
+      <td><b>RCV%</b></td><td>{{RCV}}</td>
+      <td><b>E.Dol</b></td><td>{{EDol}}</td>
+      <td><b>Gw.</b></td><td>{{GW}}</td>
+      <td><b>P.Abd1</b></td><td>{{P_abd}}</td>
+    </tr>
+  </table>
+</div>
+  <div class="separador"><b>Examen Fisicos</b></div> <br>
+  <table border="1" class="tablaEF">
+    <tr>
+      <td>Fila 1, Celda 1</td>
+      <td>Fila 1, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 2, Celda 1</td>
+      <td>Fila 2, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 3, Celda 1</td>
+      <td>Fila 3, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 4, Celda 1</td>
+      <td>Fila 4, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 5, Celda 1</td>
+      <td>Fila 5, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 6, Celda 1</td>
+      <td>Fila 6, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 7, Celda 1</td>
+      <td>Fila 7, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 8, Celda 1</td>
+      <td>Fila 8, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 9, Celda 1</td>
+      <td>Fila 9, Celda 2</td>
+    </tr>
+    <tr>
+      <td>Fila 10, Celda 1</td>
+      <td>Fila 10, Celda 2</td>
+    </tr>
+  </table>
+  <br><br>
+
+  <div class="separador"><b>Diagnosticos</b></div><br>
+
+  <div>
+    <div class="datos2 " style="display: flex; font-size: 0.8em;">
+      <div style="padding-right: 50px ;"><b>
+          <label>Dx Pricipal</label><br>
+          <label>Tipo Dx</label><br>
+          <label>Dx. Clínico</label><br>
+        </b>
+      </div>
+      <div style="padding-right: 50px ;">
+        <label>{{DxPrincipal}}</label><br>
+        <label></label><br>
+        <label>DxClinico</label><br>
+      </div>
+      <div style="padding-right: 50px ;">
+        <label><b></b></label><br>
+        <label><b>Causa Externa</b></label><br>
+      </div>
+      <div>
+        <label><b></b></label><br>
+        <label>{{CausaExterna}}</label><br>
+      </div>
+    </div>
+
+  </div>
+  <table border="1" class="tablaDia">
+    <tr>
+      <td class="tablita1"><b>CODIGO Y DESCRIPCIÓN:</b></td>
+      <td class="tablita">{{Codigo_Descripcion}}</td>
+    </tr>
+
+  </table>
+
+
+
+  <div style="font-size: 0.8em;" class="separador "><b>Análisis y Plan</b></div>
+  <table class="tablaAN">
+    <tr>
+      <td class="tablita1n">PLAN:</td>
+      <td class="tablita">{{Codigo_plan}}</td>
+    </tr>
+  </table>
+
+  <div style="text-align: center;" class="separador"><b>Notas de Evolución</b></div>
+  <TABLE class="tablaAN1">
+    <tr>
+      <td COLSPAN=3 BORDER="1" class="borde">{{Notas}}</td>
+    </tr>
+    <tr style="font-size: 0.9em;">
+      <td>MEDICO: {{Medico}}</td>
+      <td class="borde">{{fecha}}</td>
+      <td class="borde">{{Hora}}</td>
+    </tr>
+  </TABLE>
+
+  <div class="separador1" >
+      <article style="padding-left: 50px;font-weight: bold;">SOLICITUDES</article>
+      <article style="padding-left: 50px;font-weight: bold;">N.Profesional:</article>
+      <article style="padding-left: 50px;">{{N_Profesional}}</article>
+      <article style="padding-left: 50px;font-weight: bold;">N.Doc: </article>
+      <article style="padding-left: 50px;">{{Documento}}</article>
+  </div>
+  <div style="margin-left: 25px;"><b>Medicamentos</b></div>
+  <TABLE class="solicitudes_tab" style="margin-left: 25px; text-align: center;" BORDER>
+    <tr>
+      <td><b>Fecha</b></td>
+      <td><b>Codigo/Descripción</b></td>
+      <td><b>Cantidad</b></td>
+      <td><b>C.Entrega</b></td>
+      <td><b>Dias TTO</b></td>
+
+    </tr>
+    <tr>
+      <td>{{Fecha}}</td>
+      <td style="text-align: left;">{{CD}}</td>
+      <td>{{Cantidad}}</td>
+      <td>{{C_Entregada}}</td>
+      <td>{{Dias_TTO}}</td>
+    </tr>
+  </TABLE>
+  <div style="margin-left: 25px;"><b>Laboratorios</b></div>
+  <TABLE class="solicitudes_tab" style="margin-left: 25px;  text-align: center;" BORDER>
+    <tr>
+      <td><b>Fecha</b></td>
+      <td><b>Codigo/Descripción</b></td>
+      <td><b>Cantidad</b></td>
+    </tr>
+    <tr>
+      <td>{{Fecha}}</td>
+      <td style="text-align: left;">{{CD}}</td>
+      <td>{{Cantidad}}</td>
+    </tr>
+  </TABLE>
+  <div style="margin-left: 25px;"><b>Otros</b></div>
+  <TABLE class="solicitudes_tab" style="margin-left: 25px;text-align: center;" BORDER>
+    <tr>
+      <td><b>Fecha</b></td>
+      <td><b>Codigo/Descripción</b></td>
+      <td><b>Cantidad</b></td>
+
+    </tr>
+    <tr>
+      <td>{{Fecha}}</td>
+      <td style="text-align: left;">{{CD}}</td>
+      <td>{{Cantidad}}</td>
+    </tr>
+  </TABLE>
+  <div style="margin-left: 25px;"><b>Procedimientos</b></div>
+  <TABLE class="solicitudes_tab" style="margin-left: 25px;text-align: center;" BORDER>
+    <tr>
+      <td><b>Fecha</b></td>
+      <td><b>Codigo/Descripción</b></td>
+      <td><b>Cantidad</b></td>
+
+    </tr>
+    <tr>
+      <td>{{Fecha}}</td>
+      <td style="text-align: left;">{{CD}}</td>
+      <td>{{Cantidad}}</td>
+    </tr>
+  </TABLE>
+
+  <div class="firma">
+    <div>___________________________________</div><br>
+    <div style="display: flex; justify-content: center;">
+      <div style="font-weight: bold;">Dr(a) </div> <div>{{N_doctor}}</div>
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <div style="font-weight: bold;">CC:</div><div>{{Cedula}}</div><div style="font-weight: bold;">No Registro:</div><div>{{N_registro}}</div>
+    </div>
+    <div style="display: flex;justify-content: center;">
+      <div style="font-weight: bold;">Esp:</div> <div>{{Especialidad}}</div>
+    </div>
+  </div>
+</body>
+
+</html>

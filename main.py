@@ -16,7 +16,7 @@ tabla = "hhistorias"
 
 engine = create_engine(f'mysql+mysqlconnector://{user}:{password}@{host}/{database}')
 
-consulta_sql = f'SELECT * FROM {tabla} WHERE id = 24'
+consulta_sql = f'SELECT * FROM {tabla} WHERE id = 20'
 
 df = pd.read_sql_query(consulta_sql, engine)
 
@@ -30,7 +30,7 @@ carpeta_salida = 'pdf_individuales/'
 # Cargar la plantilla HTML
 template_loader = FileSystemLoader(searchpath="./")
 template_env = Environment(loader=template_loader)
-template = template_env.get_template('plantilla_tres.html')
+template = template_env.get_template('plantilla.html')
 
 # Iterar a través de cada fila y generar un PDF individual
 for i, row in df.iterrows():
